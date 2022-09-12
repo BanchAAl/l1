@@ -1,0 +1,33 @@
+package main // import "18/cmd"
+
+Реализовать структуру-счетчик, которая будет инкрементироваться в
+конкурентной среде. По завершению программа должна выводить итоговое
+значение счетчика
+
+FUNCTIONS
+
+func checkCounter(counter *counters.SyncCounter)
+    checkCounter проверка конкурентного счётчика
+
+func main()
+
+
+package counters // import "18/pkg/counters"
+
+
+TYPES
+
+type SyncCounter struct {
+        i int
+        m sync.Mutex
+}
+    SyncCounter конкурентный счётчик
+
+func (c *SyncCounter) Decr()
+    Decr увеличить счётчик
+
+func (c *SyncCounter) Incr()
+    Incr увеличить счётчик
+
+func (c *SyncCounter) Value() int
+    Value получение значения счётчика

@@ -1,0 +1,17 @@
+package main // import "."
+
+Реализовать быструю сортировку массива (quicksort) встроенными методами
+языка
+
+FUNCTIONS
+
+func main()
+func partition(ar []int) int
+    partition делим массив на части. опорный элемент выбираем посередине.
+
+func qSort(ar []int)
+    qSort реализация быстрой сортировки
+
+func swap(ar []int, i, j int)
+    swap меняем элементы местами.
+

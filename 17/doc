@@ -1,0 +1,26 @@
+package main // import "17/cmd"
+
+Реализовать бинарный поиск встроенными методами языка
+
+FUNCTIONS
+
+func binaryFind(arr []int, val int) bool
+    binaryFind реализация бинарного поиска. Поиск осуществляется по
+    отсортированному массиву.
+
+func main()
+
+package sort // import "17/pkg/sort"
+
+
+FUNCTIONS
+
+func QSort(ar []int)
+    QSort реализация быстрой сортировки
+
+func partition(ar []int) int
+    partition делим массив на части. опорный элемент выбираем посередине.
+
+func swap(ar []int, i, j int)
+    swap меняем элементы местами.
+

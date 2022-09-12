@@ -1,0 +1,11 @@
+package main // import "."
+
+Дана переменная int64. Разработать программу которая устанавливает i-й бит в
+1 или 0.
+
+FUNCTIONS
+
+func main()
+func setBit(val int64, position int, set int) int64
+    setBit установка указанного значения бита в указанной позиции
+

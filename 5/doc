@@ -1,0 +1,20 @@
+package main // import "."
+
+Разработать программу, которая будет последовательно отправлять значения в
+канал, а с другой стороны канала — читать. По истечению N секунд программа
+должна завершаться
+
+FUNCTIONS
+
+func main()
+func startRead(dataChannel chan string)
+    startRead чтение из канала
+
+func startWriteWithContext(dataChannel chan string, ctx context.Context)
+    startWriteWithContext запись в канал с ограничением времени работы с
+    использованием контекста
+
+func startWriteWithTimeSince(dataChannel chan string, duration int)
+    startWriteWithTimeSince запись в канал с ограничением времени работы с
+    использование duration
+

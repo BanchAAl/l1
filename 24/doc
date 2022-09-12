@@ -1,0 +1,34 @@
+package main // import "24/cmd"
+
+Разработать программу нахождения расстояния между двумя точками, которые
+представлены в виде структуры Point с инкапсулированными параметрами x,y и
+конструктором
+
+FUNCTIONS
+
+func main()
+
+package point // import "24/pkg/point"
+
+
+TYPES
+
+type Point struct {
+        x, y float32
+}
+    Point математическая точка
+
+func NewPoint(x, y float32) *Point
+    NewPoint конструктор точки с установкой координат
+
+func NewZeroPoint() *Point
+    NewZeroPoint конструктор точки с нулевыми координатами
+
+func (p *Point) Distance(point *Point) (dist float64)
+    Distance расчёт дистанции до указанной точки
+
+func (p *Point) SetX(x float32)
+    SetX установить зачение координаты Х для точки
+
+func (p *Point) SetY(y float32)
+    SetY установить зачение координаты Y для точки

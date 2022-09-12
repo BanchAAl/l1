@@ -1,0 +1,17 @@
+package main // import "."
+
+Реализовать конкурентную запись данных в map.
+
+FUNCTIONS
+
+func main()
+func printSyncMap(key, value any) (ok bool)
+    printSyncMap печать пар ключ-значение для синк мапы
+
+func sendToMap(dataChannel chan string, ctx context.Context)
+    sendToMap формируем сообщения и отправляем в канал
+
+func writeToMap(dataChannel chan string, ctx context.Context)
+    writeToMap пишем в мапу. реализовано 2 варианта: мапа с мьютексом и синк
+    мапа
+

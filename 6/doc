@@ -1,0 +1,16 @@
+package main // import "."
+
+Реализовать все возможные способы остановки выполнения горутины
+
+FUNCTIONS
+
+func main()
+func stopGoroutineWithChannel(stop chan bool)
+    stopGoroutineWithChannel остановка рутины через канал
+
+func stopGoroutineWithContext(ctx context.Context)
+    stopGoroutineWithContext остановка рутины через контекст
+
+func stopGoroutineWithWaitGroup()
+    stopGoroutineWithWaitGroup остановка рутины с помощью sync.WaitGroup
+

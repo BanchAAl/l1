@@ -1,0 +1,13 @@
+package main // import "."
+
+Реализовать собственную функцию sleep
+
+FUNCTIONS
+
+func main()
+func sleep(duration time.Duration)
+    sleep реализация слип через контекст с таймаутом
+
+func sleep2(duration time.Duration)
+    sleep2 реализация слип через таймафтер
+

@@ -1,0 +1,58 @@
+package main // import "4/cmd"
+
+
+     	Реализовать постоянную запись данных в канал (главный поток). Реализовать набор из N воркеров, которые читают
+    	произвольные данные из канала и выводят в stdout. Необходима возможность выбора количества воркеров при старте.
+    	Программа должна завершаться по нажатию Ctrl+C. Выбрать и обосновать способ завершения работы всех воркеров.
+
+FUNCTIONS
+
+func main()
+func startWrite(dataChannel chan string)
+    запуск записи в канал
+
+
+package workers // import "4/pkg/workers"
+
+Package workers
+
+Создаётся пул воркеров для удобства обращения с ними. Запуск остановки
+воркеров извне происходит централизовано через пул, что позволяет остановить
+воркеры так, чтобы можно было выполнить некую работу (в данном случае
+элементарную) перед остановкой воркера. sync.WaitGroup позволяет дождаться
+остановки работы всех воркеров.
+
+TYPES
+
+type Pool struct {
+	workers  []*worker
+	osNotify chan os.Signal
+	wg       sync.WaitGroup
+}
+    Pool Пул воркеров
+
+func NewPoolWorkers() *Pool
+    NewPoolWorkers конструктор пула воркеров
+
+func (wp *Pool) CreateWorkers(num int, data chan string)
+    CreateWorkers создание нужного количества воркеров
+
+func (wp *Pool) StartWorkers()
+    StartWorkers запуск чтения из канала
+
+type worker struct {
+	dataChannel chan string
+	exit        chan bool
+	numWorker   int
+	wg          *sync.WaitGroup
+}
+    Воркер, читающий из канала
+
+func newWorker(number int, dataChannel chan string, wg *sync.WaitGroup) *worker
+    конструктор воркера
+
+func (w *worker) start()
+    запуск воркера
+
+func (w *worker) stop()
+    остановка воркера

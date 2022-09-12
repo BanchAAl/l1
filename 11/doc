@@ -1,0 +1,14 @@
+package main // import "."
+
+Реализовать пересечение двух неупорядоченных множеств
+
+FUNCTIONS
+
+func intersection(a, b []int)
+    intersection ищем пересечение переданных множеств
+
+func intersectionSlow(a, b []int)
+    intersectionSlow ищем пересечение переданных множеств.работает медленнее,
+    т.к. больше проходов
+
+func main()

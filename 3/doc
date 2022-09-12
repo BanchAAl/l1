@@ -1,0 +1,57 @@
+package main // import "."
+
+Дана последовательность чисел: 2,4,6,8,10. Найти сумму их
+квадратов(22+32+42….) с использованием конкурентных вычислений
+
+FUNCTIONS
+
+func calc(wg *sync.WaitGroup, sum summator, valueForAdd int)
+    считаем квадрат и добавляем значение к сумме
+
+func calcSum(digits []int, sum summator)
+    считаем сумму квадратов
+
+func main()
+
+TYPES
+
+type channelSummator struct {
+	sum  int
+	ch   chan int
+	stop chan bool
+}
+    сумматор через канал
+
+func newChannelSummator() *channelSummator
+    конструктор сумматора через канал
+
+func (c *channelSummator) addTo(value int)
+    плюсуем значение к сумматору
+
+func (c *channelSummator) close()
+    останавливаем суммирование
+
+func (c *channelSummator) getSum() (value int)
+    получаем значение сумматора
+
+func (c *channelSummator) startSummator()
+    запуск прослушивания канала для суммирования
+
+type summator interface {
+	addTo(int)
+	getSum() int
+}
+    интерфейс для сумматоров
+
+type syncSummator struct {
+	sum int
+	mu  sync.Mutex
+}
+    потокобезопасный сумматор
+
+func (s *syncSummator) addTo(value int)
+    плюсуем значение к сумматору
+
+func (s *syncSummator) getSum() (value int)
+    получаем значение сумматора
+

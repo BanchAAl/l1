@@ -1,0 +1,34 @@
+package main // import "."
+
+Реализовать паттерн «адаптер» на любом примере
+
+FUNCTIONS
+
+func checkAdapter(t Target)
+func main()
+
+TYPES
+
+type Adaptee struct {
+}
+    Adaptee адаптируемый тип, который не может работать с новым интерфейсом
+
+func (a *Adaptee) SpecificRequest() string
+    SpecificRequest "старая" реализация
+
+type Adapter struct {
+	*Adaptee
+}
+    Adapter тип адаптера, позволяющий работать с новыминтерфейсом.
+
+func (a Adapter) Request() string
+    Request реализация метода адаптации
+
+type Target interface {
+	Request() string
+}
+    Target новый интерфейс с которым должен работать, написанный ранее код
+
+func NewAdapter(adaptee *Adaptee) Target
+    NewAdapter конструктор адаптера
+

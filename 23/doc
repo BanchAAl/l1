@@ -1,0 +1,15 @@
+package main // import "."
+
+Удалить i-ый элемент из слайса.
+
+FUNCTIONS
+
+func deleteFromSlice(data []int, pos int) (rslt []int, d int64)
+    deleteFromSlice удаление элемента слайса. сохраняется порядок расположения
+    элементов.
+
+func deleteFromSliceFast(data []int, pos int) (rslt []int, d int64)
+    deleteFromSliceFast удаление элемента слайса. без сохранения порядка
+    расположения элементов, но быстрее.
+
+func main()
